@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PDF Viewer</title>
+    <link rel="stylesheet" href="pdf-viewer.css" />
+  </head>
+  <body>
+    <div class="viewer-layout">
+      <header class="viewer-header">
+        <div class="toolbar">
+          <div class="toolbar-group toolbar-group--grow">
+            <a class="toolbar-link" href="./">← Back</a>
+            <strong id="file-name" class="file-name">Loading PDF...</strong>
+          </div>
+
+          <div class="toolbar-group">
+            <button id="prev-page" type="button" class="toolbar-button">
+              Prev
+            </button>
+            <span class="page-indicator">
+              Page <span id="page-number">1</span> /
+              <span id="total-pages">0</span>
+            </span>
+            <button id="next-page" type="button" class="toolbar-button">
+              Next
+            </button>
+          </div>
+
+          <div class="toolbar-group">
+            <button id="zoom-out" type="button" class="toolbar-button">
+              −
+            </button>
+            <span id="zoom-label" class="zoom-label">100%</span>
+            <button id="zoom-in" type="button" class="toolbar-button">
+              +
+            </button>
+            <button id="reset-zoom" type="button" class="toolbar-button">
+              Fit width
+            </button>
+            <a
+              id="download-pdf"
+              class="toolbar-link"
+              href="#"
+              download
+            >
+              Download
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="viewer-stage">
+        <p id="status" class="status">Loading PDF...</p>
+
+        <div id="viewer-card" class="viewer-card">
+          <canvas id="pdf-canvas"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="pdf-viewer.js"></script>
+  </body>
+</html>
